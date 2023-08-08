@@ -22,7 +22,7 @@ router.get('/download-track', async (req, res) => {
 
     const getTrackInformation = await SpottyDL.getTrack(trackUrl);
 
-    const downloadTrack = await SpottyDL.downloadTrack(getTrackInformation, "/sdcard/new/tmp");
+    const downloadTrack = await SpottyDL.downloadTrack(getTrackInformation, "/tmp");
     
     const trackInformation = getTrackInformation;
     const trackLink = req.protocol + '://' + req.hostname + downloadTrack[0].filename;
