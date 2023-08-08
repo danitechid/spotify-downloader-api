@@ -1,11 +1,11 @@
 {
-  "name": "new",
+  "name": "spotify-downloader-api",
   "version": "1.0.0",
   "description": "",
   "main": "main.js",
   "type": "module",
   "scripts": {
-    "start": "node ./main.js",
+    "start": "nodemon ./main.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Dani Tech.",
