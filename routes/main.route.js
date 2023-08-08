@@ -4,7 +4,7 @@ import SpottyDL from 'spottydl';
 const router = express.Router();
 
 router.get('/', (req, res) => {
-  res.redirect('/download-track');
+  res.redirect('/download-track?url=');
 })
 
 router.get('/download-track', async (req, res) => {
