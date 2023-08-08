@@ -4,7 +4,7 @@ import SpottyDL from 'spottydl';
 const router = express.Router();
 
 router.get('/', (req, res) => {
-  res.redirect('/download-track?url=');
+  res.redirect('/download-track');
 })
 
 router.get('/download-track', async (req, res) => {
@@ -22,10 +22,10 @@ router.get('/download-track', async (req, res) => {
 
     const getTrackInformation = await SpottyDL.getTrack(trackUrl);
 
-    const downloadTrack = await SpottyDL.downloadTrack(getTrackInformation, "/tmp");
+    const downloadTrack = await SpottyDL.downloadTrack(getTrackInformation, process.cwd() + '/tmp');
     
     const trackInformation = getTrackInformation;
-    const trackLink = req.protocol + '://' + req.hostname + downloadTrack[0].filename;
+    const trackLink = req.protocol + '://' + req.hostname + '/' + downloadTrack[0].filename;
 
     res.status(200).json({
       status: "Success",
